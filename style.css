@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+      
+      
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+    color: white;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+h2.titulo{
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2.titulo span{
+    color: orangered;
+    font-weight: bold;
+}
+
+/* Cabeçalho */
+
+header{
+    padding: 40px 4%;
+    
+
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: gray;
+    text-decoration: none;
+    display: inline-block;
+    transition: .3s;
+}
+
+header nav ul{
+    list-style-type: none;
+}
+
+header a:hover{
+    color: white;
+    transform: scale(1.05);
+}
+
+header nav li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+.btn-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: rgba(255, 68, 0, 0.781);
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    transition: .3;
+    
+}
+
+.btn-contato button:hover{
+    box-shadow: 0px 0px 8px orangered;
+    transform: scale(1.05);
+}
+
+/* Estilização logo */
+header .logo img {
+    width: 60px; /* Ajuste o tamanho para o que preferir */
+    height: auto; /* Mantém a proporção da imagem */
+    
+}
+
+/* Topo do site */
+
+section.topo-do-site{
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+}
+
+.topo-do-site h1{
+    color: #fff;
+    font-size: 42px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span{
+    color: orangered;
+    font-size: 70px;
+}
+
+.topo-do-site .txt-topo-site p{
+    color: #fff;
+    margin: 40px 0;
+}
+
+
+/* Estilização foto */
+
+.topo-do-site img{
+    border-radius: 200px;
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* Estilização Minhas Especialidades */
+
+
+
+section.especialidades{
+    padding: 40px 4%;
+}
+
+section.especialidades .flex{
+    gap: 60px;
+}
+
+.especialidades .especialidades-box{
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.especialidades .especialidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #ffffff57;
+}
+
+.especialidades .especialidades-box i{
+    font-size: 70px;
+    color: orangered;
+}
+
+.especialidades .especialidades-box h3{
+    font-size: 28px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+
+
+/* Estilização Sobre */
+
+section.sobre{
+    padding: 90px 4%;
+}
+
+.sobre img {
+    border: 0;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+}
+
+section.sobre .flex{
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre{
+    color: #fff;
+}
+
+.sobre .txt-sobre h2{
+    font-size: 40px;
+    font-weight: bold;    
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre span{
+    color: orangered;
+    display: block;
+    font-weight: bold;
+}
+
+.sobre .txt-sobre p{
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.sobre .txt-sobre .btn-social button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: orangered;
+    font-size: 25px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+.btn-social button:hover{
+    box-shadow: 0px 0px 8px orangered;
+    transform: scale(1.05);
+}
+
+/* Estilização do portfólio */
+
+section.portfolio{
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #ffffff57;
+}
+
+section.portfolio .flex{
+    justify-content: space-around;
+}
+
+.img-port{
+    width: 360px;
+    height: 460px;
+    background-color: orangered;
+}
+
+
+
