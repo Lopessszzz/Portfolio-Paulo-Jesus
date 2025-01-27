@@ -7,6 +7,8 @@ const port = 3000; // You can change this to your desired port
 
 app.use(bodyParser.json());
 
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.post('/send-message', (req, res) => {
   const { name, email, message } = req.body;
 

@@ -162,10 +162,10 @@
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
                 <form action="http://localhost:3000/send-message" method="POST">
-                    <input type="text" name="" id="name" placeholder="Seu nome completo" required>
-                    <input type="text" name="" id="e-mail" placeholder="Seu e-mail:" required>
+                    <input type="text" name="name" id="name" placeholder="Seu nome completo" required>
+                    <input type="email" name="email" id="e-mail" placeholder="Seu e-mail:" required>
                     <input type="text" name="" id="celular" placeholder="Seu celular">
-                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+                    <textarea name="message" id="message" placeholder="Sua mensagem" required></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
                 </form>
             </div>
