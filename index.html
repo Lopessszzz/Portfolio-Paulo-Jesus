@@ -66,8 +66,8 @@
                 <div class="flex">
                     <div class="txt-topo-site">
                         <h1>Transformando Ideias em Realidade<span>.</span></h1>
-                        <p>Olá, me chamo Paulo Jesus e sou desenvolvedor full stack em constante aprendizagem. Realizo a construção de websites responsivos, 
-                            atualmente buscando realizar o famoso Full Cycle.
+                        <p>Olá, me chamo Paulo Jesus e sou desenvolvedor front-end. Realizo a construção de websites responsivos e ajudo pessoas 
+                            tornando suas ideias em códigos.
                         </p>
                             <div class="btn-contato">
                                 <a href="#">
@@ -93,23 +93,22 @@
                     <div class="especialidades-box">
                         <i class="bi bi-code-square"></i>
                         <h3>Websites</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Fuga ex officiis tenetur! Unde rerum ipsum repellat et! Quia natus, 
-                            optio tempore distinctio possimus error impedit eveniet voluptas libero provident numquam?</p>
+                        <p>Gosto muito de criar websites responsivos para projetos pessoais e/ou profissionais. Você poderá ver alguns exemplos mais abaixo
+                            ou então entrar em meu perfil github para verificar os projetos na íntegra.
+                        </p>
                     </div><!--especialidades-box-->
                     <div class="especialidades-box">
                         <i class="bi bi-database"></i>
                         <h3>Banco de Dados</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Fuga ex officiis tenetur! Unde rerum ipsum repellat et! Quia natus, 
-                            optio tempore distinctio possimus error impedit eveniet voluptas libero provident numquam?</p>
+                        <p>Consigo manipular dados tranquilamente, já atuei com MySQL, SQLServer e MongoDB. O projeto minimal-api em meu Github é 
+                            uma API integrada com o MySQL, utilizando .NET e JS. </p>
                     </div><!--especialidades-box-->
                     <div class="especialidades-box">
                         <i class="bi bi-bicycle"></i>
                         <h3>Estilo de vida</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Fuga ex officiis tenetur! Unde rerum ipsum repellat et! Quia natus, 
-                            optio tempore distinctio possimus error impedit eveniet voluptas libero provident numquam?</p>
+                        <p>Amo praticar esportes e sou um tanto competitivo. Meus esportes favoritos são tênis, futebol e trilha de bike, estou sempre
+                            me aventurando por aí. Acredito que o esporte além de ser bom para a saúde, também educa.
+                        </p>
                     </div><!--especialidades-box-->
 
                 </div><!--flex-->
@@ -124,12 +123,13 @@
                     </div><!--img-sobre -->
                     <div class="txt-sobre">
                         <h2>MUITO PRAZER, <span>SOU PAULO JESUS</span></h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Atque quam quas id recusandae fugiat voluptate hic tenetur inventore ad nemo accusantium molestias dolorum nulla est, 
-                            reiciendis corporis! Inventore, possimus modi.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                           Perspiciatis nisi laudantium dolores, beatae fugit delectus accusantium, autem dolor doloribus ullam, 
-                           earum quidem? Sunt odio explicabo magnam similique? Vel, et beatae.</p>
+                        <p>Desenvolvedor Front-End sempre em busca de conhecimentos para alcançar o almejado Full Cycle. Tenho 1,5 anos de experiência 
+                            profissional como desenvolvedor front-end e cerca de 2 anos de estudo voltado a programação, além de
+                            ter me formado em Gestão da TI. 
+                            Também tenho experiência como helpdesk e suporte ao usuário.</p>
+                        <p> Sou apaixonado por computadores e utilizo desde que me entendo por gente.
+                            Gostaria de saber um pouco mais? Me siga nas redes sociais ou envie um email preenchendo o formulário no fim desta página.
+                        </p>
                            <div class="btn-social">
                             <a href="#"><button><i class="bi bi-instagram"></i></button></a>
                             <a target="_blank" href="https://github.com/Lopessszzz"><button><i class="bi bi-github"></i></button></a>
@@ -161,10 +161,10 @@
         <section class="formulario">
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
-                <form action="">
-                    <input type="text" name="" id="" placeholder="Seu nome completo" required>
-                    <input type="text" name="" id="" placeholder="Seu e-mail:" required>
-                    <input type="text" name="" id="" placeholder="Seu celular">
+                <form action="http://localhost:3000/send-message" method="POST">
+                    <input type="text" name="" id="name" placeholder="Seu nome completo" required>
+                    <input type="text" name="" id="e-mail" placeholder="Seu e-mail:" required>
+                    <input type="text" name="" id="celular" placeholder="Seu celular">
                     <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
                 </form>

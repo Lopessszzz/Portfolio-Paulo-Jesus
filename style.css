@@ -78,6 +78,10 @@ header nav.menu-desktop ul li{
     padding: 0 40px;
 }
 
+header .btn-abrir-menu {
+    display: none;
+  }
+
 .btn-contato button{
     padding: 10px 40px;
     font-size: 18px;
@@ -466,6 +470,11 @@ footer .logo-footer img{
         align-items: center;
         justify-content: center;
         gap: 50px;
+    }
+
+    header .btn-abrir-menu {
+        
+        display: block;
     }
 
 
