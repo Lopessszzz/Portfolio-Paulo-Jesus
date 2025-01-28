@@ -1,52 +1,48 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cors = require('cors'); // Certifique-se de importar o cors
 
 const app = express();
-const port = 3000; // You can change this to your desired port
+const port = 3000;
+
+app.use(cors()); // Use o cors logo após inicializar o app
 
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/send-message', (req, res) => {
   const { name, email, cellphone, message } = req.body;
 
-  // Basic input validation
-  
-
-  // Email configuration (replace with your actual credentials)
+  // Configuração do e-mail (substitua pelas suas credenciais)
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com', // Replace with your email provider's SMTP server
-    port: 587, // Replace with the appropriate port
-    secure: false, // True for 465, false for other ports
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
     auth: {
-      user: 'paulo.lopes2703@gmail.com', // Replace with your email address
-      pass: 'wejv ppkf rcrs xvtv', // Replace with your email password
+      user: 'paulo.lopes2703@gmail.com',
+      pass: 'wejv ppkf rcrs xvtv',
     },
   });
 
-  // Email options
-
-  
   const mailOptions = {
-    from: email, // Sender's email address
-    to: 'paulo.lopes2703@gmail.com', // Recipient's email address
-    subject: 'New Message from Portfolio Website',
-    text: `From: ${name}\nEmail: ${email}\nCelular: ${cellphone}\n\nMessage:\n${message}`,
+    from: email,
+    to: 'paulo.lopes2703@gmail.com',
+    subject: 'Nova Mensagem do Site Portfólio',
+    text: `De: ${name}\nEmail: ${email}\nCelular: ${cellphone}\n\nMensagem:\n${message}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error(error);
-      res.status(500).json({ error: 'Error sending email.' });
+      res.status(500).json({ error: 'Erro ao enviar e-mail.' });
     } else {
-      console.log('Email sent:', info.response);
-      res.json({ message: 'Message sent successfully!' });
+      console.log('Email enviado:', info.response);
+      res.json({ message: 'Mensagem enviada com sucesso!' });
     }
   });
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`Servidor ouvindo na porta ${port}`);
 });
