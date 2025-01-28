@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/send-message', (req, res) => {
-  const { name, email, message } = req.body;
+  const { name, email, cellphone, message } = req.body;
 
   // Basic input validation
   
@@ -33,7 +33,7 @@ app.post('/send-message', (req, res) => {
     from: email, // Sender's email address
     to: 'paulo.lopes2703@gmail.com', // Recipient's email address
     subject: 'New Message from Portfolio Website',
-    text: `From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    text: `From: ${name}\nEmail: ${email}\nCelular: ${cellphone}\n\nMessage:\n${message}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

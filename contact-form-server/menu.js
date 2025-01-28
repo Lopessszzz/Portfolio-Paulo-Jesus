@@ -22,6 +22,7 @@ function handleSubmit(event) {
   const form = document.querySelector('.interface form'); 
   const name = form.elements.name.value;
   const email = form.elements.email.value;
+  const cellphone = form.elements.cellphone.value;
   const message = form.elements.message.value;
 
   // Basic input validation (you can add more robust checks)
@@ -30,6 +31,7 @@ function handleSubmit(event) {
   const formData = {
     name,
     email,
+    cellphone,
     message,
   };
 
