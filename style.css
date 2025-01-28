@@ -312,10 +312,10 @@ section.sobre .flex{
     transform: scale(1.05);
 }
 
-/* Estilização Carousel */
+/* Estilização Habilidades */
 
 section.carousel-section .interface{
-    padding: 40px 4%;
+    padding: 20px;
     margin-bottom: 40px
 }
 
@@ -324,16 +324,17 @@ section.carousel-section .interface{
     position: relative;
     overflow: hidden; /* Hide overflow */
     width: 100%;
-    height: 100px; /* Thin height */
+    height: 150px; /* Thin height */
     display: flex;
     align-items: center;
-    margin: 40px;
+    margin: 40px auto;
 }
+
 
 /* Carousel Track */
 .carousel-track {
     display: flex;
-    gap: 30px; /* Space between icons */
+    gap: 20px; /* Use the CSS variable for gap */
     animation: scroll 20s linear infinite; /* Continuous scroll */
     
     
@@ -341,15 +342,13 @@ section.carousel-section .interface{
 
 /* Carousel Items */
 .carousel-item img {
-    width: 60px; /* Icon size */
+    width: 60px; /* Use the CSS variable for width */
     height: 60px;
     object-fit: contain;
     transition: filter 0.3s;
 }
 
  
-
-
 /* Keyframes for scrolling animation */
 @keyframes scroll {
     from {
@@ -575,8 +574,6 @@ footer .logo-footer img{
         margin: 10px auto;
     }
 
-    /* Habilidades */
-    
 
     /* Footer */
     footer .flex {
