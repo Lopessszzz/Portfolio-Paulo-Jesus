@@ -1,25 +1,24 @@
+// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const cors = require('cors'); // Certifique-se de importar o cors
-
-const app = express();
-const port = 3000;
+const cors = require('cors');
 require('dotenv').config();
 
-app.use(cors()); // Use o cors logo após inicializar o app
+const app = express();
+const PORT = process.env.PORT; // Porta padrão 3000
+
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/send-message', (req, res) => {
   const { name, email, cellphone, message } = req.body;
 
-
-  // Configuração do e-mail (substitua pelas suas credenciais)
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: false,
+    secure: false, // Use true se a porta for 465
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -36,7 +35,7 @@ app.post('/send-message', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error(error);
-      res.status(500).json({ error: 'Erro ao enviar e-mail.' });
+      res.status(500).json({ error: 'Erro ao enviar e-mail.' }); // Envia erro em JSON
     } else {
       console.log('Email enviado:', info.response);
       res.json({ message: 'Mensagem enviada com sucesso!' });
@@ -44,6 +43,6 @@ app.post('/send-message', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Servidor ouvindo na porta ${port}`);
+app.listen(PORT, () => {
+  console.log(`Servidor ouvindo na porta ${PORT}`);
 });
