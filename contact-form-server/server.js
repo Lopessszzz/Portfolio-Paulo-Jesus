@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -6,6 +5,7 @@ const cors = require('cors'); // Certifique-se de importar o cors
 
 const app = express();
 const port = 3000;
+require('dotenv').config();
 
 app.use(cors()); // Use o cors logo após inicializar o app
 app.use(bodyParser.json());
