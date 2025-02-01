@@ -1,5 +1,5 @@
 function downloadResume() {
-    const resumeUrl = '/client/files/Curriculo-Paulo-Jesus.pdf';
+    const resumeUrl = './client/files/Curriculo-Paulo-Jesus.pdf';
     const downloadLink = document.createElement('a');
     downloadLink.href = resumeUrl;
     downloadLink.download = 'Currículo Paulo Jesus.pdf';
