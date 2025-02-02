@@ -403,6 +403,7 @@ section.portfolio .flex{
     color: white;
     opacity: 0;
     transition: .5s;
+    text-decoration: none;
 }
 
 .overlay:hover{
