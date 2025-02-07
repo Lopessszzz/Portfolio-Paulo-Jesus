@@ -47,6 +47,40 @@ button:hover, form .btn-enviar input:hover{
     transform: scale(1.05);
 }
 
+.btn-language {
+    padding: 5px 20px;
+    font-size: 9px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 0;
+    border-radius: 15px;
+    cursor: pointer;
+    color: orangered;
+    transition: .3s;    
+    gap: 5px;
+}
+
+
+
+
+
+/* .language-selector {
+    display: flex;
+    gap: 5px;
+}
+
+
+
+.language-selector button.active {
+    color: orangered;
+} */
+
+
+.language-mobile {
+    display: none;
+}
+
+
 /* Cabeçalho */
 
 header{
@@ -511,6 +545,54 @@ footer .logo-footer img{
     h2.titulo{
         font-size: 34px;
         line-height: 30px;
+    }
+
+    /* translation */
+
+    .btn-language {
+        padding: 5px 20px;
+        font-size: 9px;
+        font-weight: 350;
+        background-color: rgba(255, 68, 0, 0.781);
+        border: 0;
+        border-radius: 15px;
+        cursor: pointer;
+        color: white;
+        transition: .3;
+        
+    }
+
+    .btn-language.active {
+        color: black; /* Muda a cor do texto para preto */
+        font-weight: bold;
+    }
+
+    
+    .language-selector {
+        display: inline-block;
+        
+    }
+    
+    /* .language-selector button {
+        padding: 10px 20px;
+        border: none;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: .3s;
+    }
+    
+    .language-selector button.active {
+        color: orangered;
+    }
+    
+    .language-selector button:hover {
+        color: #ccc;
+    } */
+
+    .language-mobile {
+        display: inline-block;
     }
 
 
