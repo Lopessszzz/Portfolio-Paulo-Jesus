@@ -237,7 +237,7 @@ section.topo-do-site .flex{
 /* Estilização foto */
 
 .topo-do-site img{
-    border-radius: 200px;
+    border-radius: 350px;
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
 }
