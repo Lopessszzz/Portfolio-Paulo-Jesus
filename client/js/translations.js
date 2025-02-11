@@ -18,19 +18,19 @@ const translations = {
         "sports": "I love playing sports and I'm quite competitive. My favorite sports are tennis, soccer and bike trail. I'm always venturing around. I believe that sport, in addition to being good for your health, educates.",
         "nicetomeetyou": "NICE TO MEET YOU, <span>I'M PAULO JESUS</span>",
         "frontenddev": "Front-End Developer always looking for knowledge to reach the desired Full Cycle. I have 1.5 year of professional experience as a front-end developer and over 2 years of study focused on programming. I also have experience as a helpdesk and user support. Graduating in IT Management.",
-        "passion": "I'm passionate about computers and have been using them since I was a kid. Would you like to know a little more? Follow me on social media, download my resume in this last button below or send me an email by filling out the form at the end of this page.",
+        "passion": "I'm passionate about computers and have been using them since I was a kid. Would you like to know a little bit more? Follow me on social media, download my resume in this last button below or send me an email by filling out the form at the end of this page.",
         "myabilities": "MY <span>ABILITIES.</span>",
         "myprojects": "MY <span>PROJECTS.</span>",
         "project1": "Project 1",
         "project2": "Project 2",
-        "project3": "Project 2",
+        "project3": "Project 3",
         "talktome": "REACH <span>ME.</span>",
         "yourname": "Your full name",
         "youremail": "Your e-mail:",
         "yourtel": "Your phone number",
         "yourmessage": "Your message",
         "send": "Send",
-        "en": "EN" // Tradução para o botão EN
+        "en": "EN"
     },
 
     "pt-BR": {
@@ -56,27 +56,26 @@ const translations = {
         "myprojects": "MEUS <span>PROJETOS.</span>",
         "project1": "Projeto 1",
         "project2": "Projeto 2",
-        "project": "Projeto 3",
+        "project3": "Projeto 3",
         "talktome": "FALE <span>COMIGO.</span>",
         "yourname": "Seu nome completo",
         "youremail": "Seu e-mail:",
         "yourtel": "Seu celular",
         "yourmessage": "Sua mensagem",
         "send": "Enviar",
-        "pt-BR": "PT-BR" // Tradução para o botão EN
+        "pt-BR": "PT-BR" 
     }
 
-};
+};// Fim translations
 
-// Traduzir a página
-// Traduzir a página
+
 function translatePage(lang) {
     console.log("Iniciando tradução para o idioma:", lang);
 
-    // Altera o idioma da página
-    document.documentElement.lang = lang; // Atualiza o atributo lang do HTML
+    
+    document.documentElement.lang = lang; 
 
-    // Traduz os elementos da página
+    
     for (const key in translations[lang]) {
         const translatedText = translations[lang][key];
         const elements = document.querySelectorAll(`[data-translate="${key}"]`);
@@ -85,19 +84,17 @@ function translatePage(lang) {
         elements.forEach(element => {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 if (element.type === 'submit') {
-                    element.value = translatedText;  // Atualiza o 'value' do botão de submit
-                } else {
-                    element.placeholder = translatedText;  // Atualiza o 'placeholder' de outros inputs
+                    element.value = translatedText;  
+                } else {                    
+                    element.placeholder = translatedText;  
                 }
             } else if (element.tagName === 'BUTTON') {
                 element.textContent = translatedText;
-            } else {
-                // Verificar se o texto traduzido contém HTML
+            } else {                
                 if (translatedText.includes('<')) {
-                    // Se contiver HTML, usamos innerHTML para preservar a estrutura
+                    
                     element.innerHTML = translatedText;
-                } else {
-                    // Caso contrário, usamos textContent para evitar que o HTML seja interpretado
+                } else {                    
                     element.textContent = translatedText;
                 }
             }
@@ -115,21 +112,20 @@ langButtons.forEach(button => {
         const lang = button.dataset.lang;
         langButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-        translatePage(lang); // Chama a função para traduzir a página
+        translatePage(lang); 
     });
 });
 
 
 
-// Quando a página for carregada, o idioma será o português (pt-BR)
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Define o idioma padrão como 'pt-BR' ao carregar a página
     const initialLang = 'pt-BR';
-    document.documentElement.lang = initialLang; // Atualiza o lang no HTML
+    document.documentElement.lang = initialLang; 
     langButtons.forEach(button => {
         if (button.dataset.lang === initialLang) {
-            button.classList.add('active'); // Destaca o botão de idioma
+            button.classList.add('active'); 
         }
     });
-    translatePage(initialLang); // Traduz para o idioma padrão
+    translatePage(initialLang); 
 });

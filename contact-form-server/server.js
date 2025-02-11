@@ -6,7 +6,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT; // Porta padrão 3000
+const PORT = process.env.PORT; 
 
 app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
@@ -18,7 +18,7 @@ app.post('/send-message', (req, res) => {
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: false, // Use true se a porta for 465
+    secure: false, 
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -35,7 +35,7 @@ app.post('/send-message', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.error(error);
-      res.status(500).json({ error: 'Erro ao enviar e-mail.' }); // Envia erro em JSON
+      res.status(500).json({ error: 'Erro ao enviar e-mail.' }); 
     } else {
       console.log('Email enviado:', info.response);
       res.json({ message: 'Mensagem enviada com sucesso!' });

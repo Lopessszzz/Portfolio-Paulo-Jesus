@@ -15,9 +15,9 @@ document.querySelector('form').addEventListener('submit', async (event) => {
 
     if (response.ok) {
       alert('Formulário enviado com sucesso!');
-      event.target.reset(); // Limpa o formulário após o envio
+      event.target.reset();
     } else {
-      const errorData = await response.json(); // Obtém os dados de erro do servidor
+      const errorData = await response.json(); 
       console.error('Erro ao enviar o formulário:', errorData);
       alert(`Erro ao enviar o formulário: ${errorData.error || 'Erro desconhecido'}`);
     }
