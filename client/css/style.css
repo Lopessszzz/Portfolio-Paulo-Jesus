@@ -21,6 +21,27 @@ body{
     color: white;
 }
 
+/* Adicionar transições suaves nos textos */
+[data-translate] {
+    transition: opacity 0.5s ease-in-out; /* Suaviza a mudança de conteúdo */
+    opacity: 0;
+}
+
+/* Estado visível após a tradução */
+[data-translate].visible {
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+    transition: visibility 0.3s;
+}
+
+
 .interface{
     max-width: 1280px;
     margin: 0 auto;

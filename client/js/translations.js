@@ -72,35 +72,44 @@ const translations = {
 function translatePage(lang) {
     console.log("Iniciando tradução para o idioma:", lang);
 
-    
-    document.documentElement.lang = lang; 
+    document.documentElement.lang = lang;
 
-    
-    for (const key in translations[lang]) {
-        const translatedText = translations[lang][key];
-        const elements = document.querySelectorAll(`[data-translate="${key}"]`);
-        console.log(`Traduzindo chave: ${key}, com texto: "${translatedText}"`);
+    // Adiciona transição suave para elementos com data-translate
+    const elementsToTranslate = document.querySelectorAll('[data-translate]');
+    elementsToTranslate.forEach(element => {
+        element.classList.remove('visible');
+    });
 
-        elements.forEach(element => {
-            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                if (element.type === 'submit') {
-                    element.value = translatedText;  
-                } else {                    
-                    element.placeholder = translatedText;  
-                }
-            } else if (element.tagName === 'BUTTON') {
-                element.textContent = translatedText;
-            } else {                
-                if (translatedText.includes('<')) {
-                    
-                    element.innerHTML = translatedText;
-                } else {                    
+    setTimeout(() => {
+        for (const key in translations[lang]) {
+            const translatedText = translations[lang][key];
+            const elements = document.querySelectorAll(`[data-translate="${key}"]`);
+            console.log(`Traduzindo chave: ${key}, com texto: "${translatedText}"`);
+
+            elements.forEach(element => {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    if (element.type === 'submit') {
+                        element.value = translatedText;
+                    } else {
+                        element.placeholder = translatedText;
+                    }
+                } else if (element.tagName === 'BUTTON') {
                     element.textContent = translatedText;
+                } else {
+                    if (translatedText.includes('<')) {
+                        element.innerHTML = translatedText;
+                    } else {
+                        element.textContent = translatedText;
+                    }
                 }
-            }
+            });
+        }
 
+        // Habilita a visibilidade com transição suave
+        elementsToTranslate.forEach(element => {
+            element.classList.add('visible');
         });
-    }
+    }, 200);  // Tempo para aplicar o efeito de transição
 }
 
 // Seleciona todos os botões de idioma
@@ -113,19 +122,22 @@ langButtons.forEach(button => {
         langButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
         translatePage(lang); 
+
+        // Salva a escolha do idioma no localStorage
+        localStorage.setItem( lang);
     });
 });
 
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    const initialLang = 'pt-BR';
-    document.documentElement.lang = initialLang; 
+    // Verifica se já existe um idioma armazenado e aplica
+    const initialLang = localStorage.getItem('pt-BR') || 'pt-BR';
+    document.documentElement.lang = initialLang;
+
     langButtons.forEach(button => {
         if (button.dataset.lang === initialLang) {
-            button.classList.add('active'); 
+            button.classList.add('active');
         }
     });
+
     translatePage(initialLang); 
 });
