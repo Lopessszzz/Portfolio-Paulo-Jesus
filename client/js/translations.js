@@ -17,7 +17,7 @@ const translations = {
         "lifestyle": "Lifestyle",
         "sports": "I love playing sports and I'm quite competitive. My favorite sports are tennis, soccer and bike trail. I'm always venturing around. I believe that sport, in addition to being good for your health, educates.",
         "nicetomeetyou": "NICE TO MEET YOU, <span>I'M PAULO JESUS</span>",
-        "frontenddev": "Front-End Developer always looking improvements to reach the desired Full Cycle. I have 1.5 year of professional experience as a front-end developer and over 2 years of study focused on programming. I also have experience as a helpdesk and user support. Graduating in IT Management.",
+        "frontenddev": "Front-End Developer always looking for improvements to conquer the desired Full Cycle. I have 1.5 year of professional experience as a front-end developer and over 2 years of study focused on programming. I also have experience as a helpdesk and user support. Graduating in IT Management.",
         "passion": "I'm passionate about computers and have been using them since I was a kid. Would you like to know a little bit more? Follow me on social media, download my resume in this last button below or send me an email by filling out the form at the end of this page.",
         "myabilities": "MY <span>ABILITIES.</span>",
         "myprojects": "MY <span>PROJECTS.</span>",
